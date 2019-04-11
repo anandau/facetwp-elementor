@@ -55,6 +55,7 @@ class FacetWP_Elementor_Addon {
                 'archive-posts',
                 'woocommerce-products',
                 'woocommerce-archive-products',
+                'wc-archive-products',
                 'uael-posts',
                 'uael-woo-products',
             ]
@@ -74,6 +75,7 @@ class FacetWP_Elementor_Addon {
             'section_content' => [
                 'woocommerce-products',
                 'woocommerce-archive-products',
+                'wc-archive-products',
             ],
             'section_filter_field' => [
                 'uael-woo-products',

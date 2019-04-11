@@ -146,7 +146,7 @@ class FacetWP_Elementor_Addon {
      */
     function is_main_query( $is_main_query, $query ) {
 
-        if ( ( is_archive() || is_tax() || is_home() || is_search() ) && ! ( function_exists( 'is_shop' ) && is_shop() ) ) {
+        if ( is_archive() || is_tax() || is_home() || is_search() ) {
             return $is_main_query;
         }
 

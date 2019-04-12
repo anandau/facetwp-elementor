@@ -177,7 +177,7 @@ class FacetWP_Elementor_Addon {
 
                 if ( 'posts' == $widget->get_name() ) {
 
-                    add_action( "elementor_pro/posts/query/{$settings['posts_query_id']}", function( $query, $widget ) {
+                    add_action( "elementor/query/{$settings['posts_query_id']}", function( $query, $widget ) {
                         $query->set( 'facetwp', true );
                     }, 10, 2 );
 

@@ -1,6 +1,6 @@
 (function($) {
     $(document).on('facetwp-loaded', function() {
-        if ( undefined !== 'elementorFrontend' ) {
+        if ( FWP.loaded && 'undefined' !== typeof 'elementorFrontend' ) {
             elementorFrontend.init();
         }
     });

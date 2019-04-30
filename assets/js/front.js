@@ -1,7 +1,7 @@
 (function($) {
     $(document).on('facetwp-loaded', function() {
         if ( FWP.loaded && 'undefined' !== typeof 'elementorFrontend' ) {
-            elementorFrontend.init();
+            elementorFrontend.elementsHandler.runReadyTrigger('.facetwp-template');
         }
     });
     $(document).on('click', '.facetwp-template.elementor-widget-archive-posts .elementor-pagination a', function(e) {

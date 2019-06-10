@@ -58,6 +58,7 @@ class FacetWP_Elementor_Addon {
                 'wc-archive-products',
                 'uael-posts',
                 'uael-woo-products',
+                'dyncontel-acfposts'
             ]
         );
 
@@ -71,6 +72,7 @@ class FacetWP_Elementor_Addon {
             'section_layout' => [
                 'posts',
                 'archive-posts',
+                'dyncontel-acfposts'
             ],
             'section_content' => [
                 'woocommerce-products',
@@ -182,7 +184,7 @@ class FacetWP_Elementor_Addon {
                     }, 10, 2 );
 
                 }
-                elseif ( in_array( $widget->get_name(), [ 'woocommerce-archive-products', 'woocommerce-products', 'uael-posts', 'uael-woo-products' ] ) ) {
+                elseif ( in_array( $widget->get_name(), [ 'woocommerce-archive-products', 'woocommerce-products', 'uael-posts', 'uael-woo-products', 'dyncontel-acfposts' ] ) ) {
 
                     add_filter( 'pre_get_posts', function( $query ) {
                         $query->set( 'facetwp', true );

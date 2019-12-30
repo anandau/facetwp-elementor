@@ -154,6 +154,10 @@ class FacetWP_Elementor_Addon {
             $is_main_query = false;
         }
 
+        if ( $is_main_query && isset( FWP()->ajax->url_vars['paged'] ) ) {
+            $paged = FWP()->ajax->url_vars['paged'];
+        }
+
         return $is_main_query;
     }
 
@@ -176,9 +180,19 @@ class FacetWP_Elementor_Addon {
                 }
 
                 if ( 'posts' == $widget->get_name() ) {
-
+                    
                     add_action( "elementor/query/{$settings['posts_query_id']}", function( $query, $widget ) {
-                        $query->set( 'facetwp', true );
+                        
+                        $query->set( 'facetwp', true );             
+                        
+                        /** hijack filter to set paged query var */
+                        add_filter( 'facetwp_pager_args', function( $pager_args ) {
+                            if ( isset( $pager_args['page'] ) ) {
+                                set_query_var( 'paged', $pager_args['page'] );
+                            }
+                            return $pager_args; // return
+                        });
+                        
                     }, 10, 2 );
 
                 }

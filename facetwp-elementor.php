@@ -58,6 +58,7 @@ class FacetWP_Elementor_Addon {
                 'wc-archive-products',
                 'uael-posts',
                 'uael-woo-products',
+                'jet-listing-grid'
             ]
         );
 
@@ -70,16 +71,19 @@ class FacetWP_Elementor_Addon {
         $sections = [
             'section_layout' => [
                 'posts',
-                'archive-posts',
+                'archive-posts'
             ],
             'section_content' => [
                 'woocommerce-products',
                 'woocommerce-archive-products',
-                'wc-archive-products',
+                'wc-archive-products'
             ],
             'section_filter_field' => [
                 'uael-woo-products',
-                'uael-posts',
+                'uael-posts'
+            ],
+            'section_general' => [
+                'jet-listing-grid'
             ]
         ];
 
@@ -122,7 +126,7 @@ class FacetWP_Elementor_Addon {
         $element->start_controls_section(
             'facetwp_section', [
                 'label' => __( 'FacetWP', 'facetwp-elementor' ),
-                'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+                'tab' => \Elementor\Controls_Manager::TAB_CONTENT
             ]
         );
 
@@ -182,7 +186,7 @@ class FacetWP_Elementor_Addon {
                     }, 10, 2 );
 
                 }
-                elseif ( in_array( $widget->get_name(), [ 'woocommerce-archive-products', 'woocommerce-products', 'uael-posts', 'uael-woo-products' ] ) ) {
+                elseif ( in_array( $widget->get_name(), [ 'woocommerce-archive-products', 'woocommerce-products', 'uael-posts', 'uael-woo-products', 'jet-listing-grid' ] ) ) {
 
                     add_filter( 'pre_get_posts', function( $query ) {
                         $query->set( 'facetwp', true );
